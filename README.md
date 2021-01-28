@@ -8,3 +8,7 @@ We want to see that you have attempted the questions from the practicals yoursel
 and that this code is well documented (e.g., with a readme for your repository etc.).  
 
 Happy coding!
+
+28/01/2021 - Practical 1/ Week 2
+- Added a file to the repository that answers the questions in the practical,
+- Added println statements to the classes ThreeSumA and ThreeSumB to print out the correct triples.
