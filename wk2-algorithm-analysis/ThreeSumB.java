@@ -48,7 +48,10 @@ public class ThreeSumB {
         for (int i = 0; i < n; i++) {
             for (int j = i+1; j < n; j++) {
                 int k = Arrays.binarySearch(a, -(a[i] + a[j]));
-                if (k > j) count++;
+                if (k > j) {
+                    StdOut.println("Correct triple: " + a[i] + ", " + a[j] + ", " + a[k]);
+                    count++;
+                }
             }
         }
         return count;
