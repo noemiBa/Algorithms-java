@@ -1,0 +1,16 @@
+Practical 2 - Exercise 1
+
+Q. Use the Russian Peasant's algorithm to multiply the following two integers by hand: 68x139
+
+A. Put the smaller number on the left to reduce the number of steps. Consequently, divide the number on the left by 2 ignoring the remainder and multiply 
+the number on the right by 2. Lastly, add the numbers on the right together only if the corresponding number on the left is odd to get the result. 
+
+68               139
+34               278
+17               556
+8 (no remain.)  1112
+4               2224
+2               4448
+1               8896
+
+Adding the numbers together as specified above, we get: 68x139 = 556 + 8896 = 9452 
