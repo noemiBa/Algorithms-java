@@ -1,3 +1,4 @@
+package wk2;
 /******************************************************************************
  *  Compilation:  javac Stopwatch.java
  *  Execution:    java Stopwatch n

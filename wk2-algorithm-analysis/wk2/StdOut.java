@@ -1,3 +1,4 @@
+package wk2;
 /******************************************************************************
  *  Compilation:  javac StdOut.java
  *  Execution:    java StdOut
