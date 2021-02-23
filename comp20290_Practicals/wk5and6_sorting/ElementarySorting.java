@@ -1,39 +1,45 @@
+package comp20290_Practicals.wk5and6_sorting;
 import java.util.Random;
-/* A basic class that implements some basic sorting algorithms i.e. selection Sort and insertion Sort. 
- * In addition to that, a joke sorting algorithm, the Stalin Sort, was also implemented. 
- * Methods to create a random array and to print an array are also present. 
- * 
- * @Author: NoemiBa
- */
+
+
 public class ElementarySorting {
+	public static final int CUTOFF = 10;
 	
 	public static void main(String[] args) {
 		//Testing code
-		int n = 30; 
-		int [] array = createRandomArray(n);
-		
-		selectionSort(array);
-		
-		printArray(array);
-		
+		int n = 50; 
+//		int [] array = createRandomArray(n);
+//		Stopwatch sw = new Stopwatch(); 
+//		selectionSort(array);
+//	    System.out.println("Selection sort for: " + n + " elements, took " + sw.elapsedTime());
+//		printArray(array);
+//		
+//		int [] array3 = createRandomArray(n);
+//		Stopwatch sw1 = new Stopwatch(); 
+//		StalinSort(array3);
+//		System.out.println("Stalin sort for: " + n + " elements, took " + sw1.elapsedTime());
+//		printArray(array3);
+
 		int [] array2 = createRandomArray(n);
-		
+		Stopwatch sw2 = new Stopwatch(); 
 		insertionSort(array2);
-		
+		System.out.println("Insertion sort for: " + n + " elements, took " + sw2.elapsedTime());
 		printArray(array2);
-		
-		int [] array3 = createRandomArray(n);
-		
-		StalinSort(array3);
-	
-		printArray(array3);
-		
+
 		int [] array4 = createRandomArray(n);
+		Stopwatch sw3 = new Stopwatch(); 
 		mergeSort(array4);
+		System.out.println("Merge sort for: " + n + " elements, took " + sw3.elapsedTime());
 		printArray(array4);
 		
+		int [] array5 = createRandomArray(n);
+		Stopwatch sw4 = new Stopwatch(); 
+		mergeSortEnhanced(array5);
+		System.out.println("Merge sort enhanced for: " + n + " elements, took " + sw4.elapsedTime());
+		printArray(array5);
+
 	}
-	
+
 	/* The function uses the selection sort algorithm in order to sort a given array. Selection sort loops over indices in the array; 
 	 * for each index, selection sort calls indexOfMinimum and swap. It is an in place, comparison sorting algorithm.
 	 * 
@@ -42,24 +48,24 @@ public class ElementarySorting {
 	public static void selectionSort(int [] array) {
 		int temp; 
 		int min_index; 
-		
+
 		for (int i=0; i<array.length-1; i++) {
 			min_index = i; 
-			
+
 			for (int j = i+1; j<array.length;j++) {
 				if (array[min_index] > array[j]) {
 					min_index = j;
 				}
 			}
-			
+
 			//Swap the found minimum element with the first element 
 			temp = array[i]; 
 			array[i] = array[min_index];
 			array[min_index] = temp; 
 		}
-	
+
 	}
-	
+
 	/* The function uses the insertion sort algorithm in order to sort a given array. Insertion sort is a sorting mechanism where the 
 	 * sorted array is built having one item at a time. The array elements are compared with each other sequentially and swapped if necessary.
 	 * 
@@ -67,7 +73,7 @@ public class ElementarySorting {
 	 */
 	public static void insertionSort(int [] array) {
 		int n = array.length;
-		
+
 		for (int i=0; i<n; i++) {
 			int temp  = array[i];
 			int j = i-1; 
@@ -78,22 +84,22 @@ public class ElementarySorting {
 			array[j+1]= temp; 
 		}
 	}
-	
+
 	/*The Stalin Sort is a joke sort in which elements that are out of order get removed from a list.
 	 * 
 	 * @param array: the array to be sorted
 	 */
 	public static void StalinSort(int [] array) {
 		int i = 0; 
-		
+
 		for (int j = 1; j <array.length; j++) {
 			if (array[i] > array[j]) {
 				array[i] = 0; 
 			}
-			
+
 			i++; 
 		}
-		
+
 		/*
 		 * int bigger = 0; int j = 0; int [] arraySorted = new int [array.length];
 		 * 
@@ -101,7 +107,7 @@ public class ElementarySorting {
 		 * arraySorted[j] = array[i]; j++; } } array = arraySorted;
 		 */
 	}
-	
+
 	/* Merge Sort is an efficient sorting algorithm which uses a divide and conquer sorting strategy. Merge sort splits the array in the middle, 
 	 * recursively sorts each half and then merges the two sorted parts together. 
 	 * 
@@ -109,33 +115,33 @@ public class ElementarySorting {
 	 * @return the sorted array.
 	 */
 	public static void mergeSort(int [] array) {
-	     int length = array.length; 
-	     int midpoint = length/2;
-	     
-	     //base case
-	     if (length == 1) { return; }
-	     
-	     int [] left = new int [midpoint];
-	     
-	     //copy the first half of the array into the left sub-array
-	     for (int i = 0; i < midpoint; i++) {
-	    	 left[i] = array[i];
-	     }
-	     
-	     int [] right = new int [length-midpoint];
-	     
-	     //copy the second half of the array into the left sub-array
-	     for (int i = 0; i < right.length; i++) {
-	    	 right[i] = array[midpoint+i];
-	     }
-	     
-	     //create left and right sub-arrays
-	     mergeSort(left);
-	     mergeSort(right);
-	     
-	     merge(left, right, array); 
+		int length = array.length; 
+		int midpoint = length/2;
+
+		//base case
+		if (length == 1) { return; }
+
+		int [] left = new int [midpoint];
+
+		//copy the first half of the array into the left sub-array
+		for (int i = 0; i < midpoint; i++) {
+			left[i] = array[i];
+		}
+
+		int [] right = new int [length-midpoint];
+
+		//copy the second half of the array into the left sub-array
+		for (int i = 0; i < right.length; i++) {
+			right[i] = array[midpoint+i];
+		}
+
+		//create left and right sub-arrays
+		mergeSort(left);
+		mergeSort(right);
+
+		merge(left, right, array); 
 	}
-	
+
 	/* Private helper method. Merges two sorted arrays and returns a single array. 
 	 * 
 	 * @param left, the first sorted array.
@@ -146,7 +152,7 @@ public class ElementarySorting {
 		int indexLeft = 0; //next element in the left sub-array
 		int indexRight = 0; //next element in the right sub=array
 		int j = 0;  //next open position in the array
-		
+
 		while (indexLeft < left.length && indexRight < right.length) {
 			if (left[indexLeft] < right[indexRight]) {
 				array[j] = left[indexLeft]; 
@@ -159,8 +165,49 @@ public class ElementarySorting {
 			j++; 
 		}
 	}
-	
-	
+
+	/* Merge Sort is an efficient sorting algorithm which uses a divide and conquer sorting strategy. Merge sort splits the array in the middle, 
+	 * recursively sorts each half and then merges the two sorted parts together. In this enhanced version, a cutoff for smaller sub-arrays has been added as well
+	 * as testing whether the array is already in order.
+	 * 
+	 * @param array: the array to be sorted
+	 * @return the sorted array.
+	 */
+	public static void mergeSortEnhanced(int [] array) {
+		int length = array.length; 
+		int midpoint = length/2;
+
+		//base case
+		if (length == 1) { return; }
+
+		int [] left = new int [midpoint];
+		int [] right = new int [length-midpoint];
+
+		if (left.length <= CUTOFF || right.length <= CUTOFF) {
+			insertionSort(left);
+			insertionSort(right);
+		}
+		else if (array[midpoint] <= array[midpoint+1]){} //just skip to the merge part
+		else {
+			//copy the first half of the array into the left sub-array
+			for (int i = 0; i < midpoint; i++) {
+				left[i] = array[i];
+			}
+
+			//copy the second half of the array into the left sub-array
+			for (int i = 0; i < right.length; i++) {
+				right[i] = array[midpoint+i];
+			}
+
+			//create left and right sub-arrays
+			mergeSort(left);
+			mergeSort(right);
+		}
+
+		merge(left, right, array); 
+	}
+
+
 	/* Private function that takes a specified size and returns a randomly filled array of integers that size.
 	 * 
 	 * @param size: the size of the array
@@ -170,11 +217,11 @@ public class ElementarySorting {
 		Random rand = new Random(); 
 		int[] array = new int[size];
 		for (int i = 0; i < array.length; i++) {
-	         array[i] = rand.nextInt(100); 
-	    }
+			array[i] = rand.nextInt(100); 
+		}
 		return array; 
 	}
-	
+
 	/* Private function to print an array. 
 	 * 
 	 */

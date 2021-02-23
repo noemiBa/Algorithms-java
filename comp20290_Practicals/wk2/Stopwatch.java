@@ -1,4 +1,4 @@
-package comp20290_Practicals.wk4_recursion;
+package comp20290_Practicals.wk2;
 
 /**
  *  The {@code Stopwatch} data type is for measuring

@@ -1,3 +1,5 @@
+package comp20290_Practicals.wk4_recursion;
+
 /* The Fibonacci sequence is a a sequence of integers in which the first two elements are 0 and 1, 
  * and each following element is the sum of the two preceding numbers. 
  * This class implements both a recursive solution and an iterative solution
@@ -42,9 +44,14 @@ public class Fibonacci {
 
 
 	public static void main (String args[])  { 
-		int n = 9; 
+		int n = 50; 
+		Stopwatch sw = new Stopwatch();
 		System.out.println(fibonacciIterative(n)); 
+		System.out.println("Fibonaccy iterative for " + n + ", time elapsed: " + sw.elapsedTime());
+		
+		Stopwatch sw1 = new Stopwatch();
 		System.out.println(fibonacciRecursive(n));
+		System.out.println("Fibonaccy recursive for " + n + ", time elapsed: " + sw1.elapsedTime());
 	} 
 
 }

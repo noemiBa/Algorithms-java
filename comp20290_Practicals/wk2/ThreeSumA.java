@@ -1,4 +1,4 @@
-package wk2;
+package comp20290_Practicals.wk2;
 /******************************************************************************
  *  Compilation:  javac ThreeSumA.java
  *  Execution:    java ThreeSum input.txt

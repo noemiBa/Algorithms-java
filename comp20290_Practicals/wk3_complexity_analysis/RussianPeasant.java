@@ -1,3 +1,5 @@
+package comp20290_Practicals.wk3_complexity_analysis;
+
 import java.math.BigInteger;
 
 /* A class implementing the Russian Peasant algorithm for multiplication

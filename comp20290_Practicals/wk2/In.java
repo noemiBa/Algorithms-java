@@ -1,4 +1,4 @@
-package wk2;
+package comp20290_Practicals.wk2;
 /******************************************************************************
  *  Compilation:  javac In.java
  *  Execution:    java In   (basic test --- see source for required files)
