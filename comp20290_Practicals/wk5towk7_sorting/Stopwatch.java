@@ -1,4 +1,4 @@
-package comp20290_Practicals.wk5and6_sorting;
+package comp20290_Practicals.wk5towk7_sorting;
 /**
  *  The {@code Stopwatch} data type is for measuring
  *  the time that elapses between the start and end of a
