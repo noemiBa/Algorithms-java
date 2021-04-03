@@ -1,7 +1,6 @@
 package comp20290_Practicals.wk8_stringsearching;
 import java.util.Random;
 
-import Stopwatch;
 
 /*Java program for implementation of KMP pattern searching algorithm. The brute force algorithm doesn't 
 	  * KMP improves upon this by taking advantage of prior knowledge about the text being searched.

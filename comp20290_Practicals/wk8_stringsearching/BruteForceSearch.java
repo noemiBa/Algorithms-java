@@ -1,7 +1,6 @@
 package comp20290_Practicals.wk8_stringsearching;
 import java.util.Random;
 
-import Stopwatch;
 
 //Java program for Naive Pattern Searching 
 
