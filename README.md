@@ -25,6 +25,7 @@ Java programs and algorithmic analysis created during the spring semester 2020/2
 |   |   | [KMPSearch](./comp20290_Practicals/wk8_stringsearching/KMPsearch.java) | Java program for String pattern search using a KMP algorithm (more efficient than the Brute Force algorithm). | 
 | 6 | [Tries](https://github.com/CompAlgorithms/algorithms20290-2021-repository-noemiBa/blob/main/comp20290_Practicals/wk9_tries/Practical8_Tries.pdf) | [Trie](./comp20290_Practicals/wk9_tries/Trie.java) | Standard Java Trie implementation. |  
 | 7 | [Data Compression](https://github.com/CompAlgorithms/algorithms20290-2021-repository-noemiBa/blob/main/comp20290_Practicals/wk10_runlength/Practical9_Run%20Length.pdf) | [RunLengthEncoding](./comp20290_Practicals/wk10_runlength/RunLengthEncoding.java) | Java implementation of the Run Length Encoding algorithm. | 
+| 8 | [Huffman Assignment](https://github.com/CompAlgorithms/algorithms20290-2021-repository-noemiBa/blob/main/comp20290_Practicals/Assignment/Huffman%20Compression.pdf) | [Huffman](./comp20290_Practicals/Assignment/src/Huffman.java) | Java implementation of huffman algorithm. | 
 
 ## Utility Classes
 Please note that the following utility classes utilised throughout the repository were authored by *Robert Sedgewick* and *Kevin Wayne*:
